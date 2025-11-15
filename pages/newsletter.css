@@ -1,0 +1,441 @@
+/* Reset & base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #f5faf6;
+  color: #2a2f31;
+  line-height: 1.6;
+  font-size: 16px;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+a {
+  color: #2a8a4f;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #4cb87e;
+}
+
+/* Floating leaves animation */
+.floating-leaves {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+.floating-leaves i {
+  position: absolute;
+  display: block;
+  width: 40px; height: 40px;
+  background: url('leaf-icon.svg') no-repeat center/contain;
+  opacity: 0.6;
+  animation: leafFall 8s linear infinite;
+}
+.floating-leaves i:nth-child(1) { left: 10%; animation-delay: 0s; }
+.floating-leaves i:nth-child(2) { left: 30%; animation-delay: 2s; width:60px; height:60px; }
+.floating-leaves i:nth-child(3) { left: 55%; animation-delay: 4s; width:50px; height:50px; }
+.floating-leaves i:nth-child(4) { left: 75%; animation-delay: 6s; width:45px; height:45px; }
+.floating-leaves i:nth-child(5) { left: 90%; animation-delay: 8s; width:55px; height:55px; }
+
+@keyframes leafFall {
+  0% {
+    transform: translateY(-100px) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateY(50vh) rotate(45deg);
+  }
+  100% {
+    transform: translateY(100vh) rotate(90deg);
+    opacity: 0;
+  }
+}
+
+/* Header */
+.newsletter-header {
+  text-align: center;
+  padding: 4rem 1rem 2rem;
+  background: linear-gradient(135deg, #2a8a4f, #67c68d);
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+.newsletter-header h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+.newsletter-header .subtitle {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+/* Theme toggle button */
+#theme-toggle {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  border: 1px solid #2a8a4f;
+  color: #2a8a4f;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+  z-index: 2;
+}
+#theme-toggle:hover {
+  background: #2a8a4f;
+  color: white;
+}
+
+/* Main container */
+.newsletter-container {
+  max-width: 800px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Signup Card */
+.signup-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 2.5rem 2rem;
+  margin-bottom: 2rem;
+}
+.signup-card .illustration {
+  width: 120px; height: 120px;
+  background: url('plant-icon.svg') no-repeat center/contain;
+  margin: 0 auto 1.5rem;
+}
+.signup-form {
+  width: 100%;
+  max-width: 450px;
+}
+.signup-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #3b4a46;
+}
+.signup-form input[type="email"] {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cdd9d6;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  transition: border 0.3s ease;
+}
+.signup-form input[type="email"]:focus {
+  border-color: #2a8a4f;
+  outline: none;
+}
+.signup-form button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  font-size: 1rem;
+  background: #2a8a4f;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.signup-form button:hover {
+  background: #1f6e3d;
+}
+.signup-form .note {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #6c7a75;
+  text-align: center;
+}
+
+/* Section A – Monthly Harvest & Insights */
+.newsletter-section.section-harvest {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #e8fef2;
+  border-radius: 10px;
+  border: 1px solid #cde9dc;
+}
+.newsletter-section.section-harvest h2 {
+  color: #2a8a4f;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+.newsletter-section.section-harvest p {
+  margin: 0.8rem 0;
+  color: #2a3440;
+}
+.newsletter-section.section-harvest ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  color: #39484f;
+}
+.newsletter-section.section-harvest ul li {
+  margin: 0.6rem 0;
+}
+.newsletter-section.section-harvest a {
+  text-decoration: underline;
+}
+
+/* Section B – Grower Tip & Ask-Us Corner */
+.newsletter-section.section-grower-tip {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #f1fefa;
+  border-radius: 10px;
+  border: 1px solid #d8f1e4;
+}
+.newsletter-section.section-grower-tip h2 {
+  color: #267a44;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+.newsletter-section.section-grower-tip p {
+  margin: 0.8rem 0;
+  color: #2b3c3f;
+}
+.tip-form {
+  margin: 1.5rem 0 0;
+}
+.tip-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #3b4a46;
+}
+.tip-form textarea {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #cfe9d8;
+  border-radius: 8px;
+  margin-0.6rem 0 1rem;
+  resize: vertical;
+}
+.tip-form button {
+  padding: 0.9rem 1.2rem;
+  font-size: 1rem;
+  background: #267a44;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.tip-form button:hover {
+  background: #1e5c33;
+}
+
+/* Footer */
+.newsletter-footer {
+  padding: 2rem 1rem;
+  text-align: center;
+  background: #e8f5ed;
+  border-top: 1px solid #dfe8e4;
+  position: relative;
+  z-index: 1;
+}
+.newsletter-footer .footer-container p {
+  margin-0.5rem 0;
+  color: #5b6b66;
+  font-size: 0.9rem;
+}
+.newsletter-footer .footer-container a {
+  color: #2a8a4f;
+  margin: 0 0.4rem;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+.newsletter-footer .footer-container a:hover {
+  color: #4cb87e;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .newsletter-header h1 {
+    font-size: 2.2rem;
+  }
+  .signup-card {
+    padding: 2rem 1.5rem;
+  }
+  .signup-form button {
+    font-size: 0.95rem;
+  }
+  .newsletter-section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #1e2923;
+  color: #cfd8d2;
+}
+body.dark-mode a {
+  color: #8fcf9b;
+}
+body.dark-mode .newsletter-header {
+  background: #14422c;
+}
+body.dark-mode #theme-toggle {
+  border-color: #8fcf9b;
+  color: #8fcf9b;
+}
+body.dark-mode #theme-toggle:hover {
+  background: #8fcf9b;
+  color: #1e2923;
+}
+body.dark-mode .signup-card,
+body.dark-mode .newsletter-section {
+  background: #26362e;
+  border-color: #3a4b45;
+}
+body.dark-mode .newsletter-footer {
+  background: #22322b;
+  border-top-color: #3d4b42;
+}
+body.dark-mode .signup-form input,
+body.dark-mode .tip-form textarea {
+  background: #1f2f27;
+  border: 1px solid #3a4b45;
+  color: #cfd8d2;
+}
+body.dark-mode .signup-form button,
+body.dark-mode .tip-form button {
+  background: #2a6f4b;
+}
+/* Crop-selection & yield-forecast sections */
+.newsletter-section.section-crop-select,
+.newsletter-section.section-yield-forecast {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #e7fdf6;
+  border-radius: 10px;
+  border: 1px solid #cdece5;
+}
+.newsletter-section.section-crop-select h2,
+.newsletter-section.section-yield-forecast h2 {
+  color: #2a8a4f;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+.newsletter-section.section-crop-select p,
+.newsletter-section.section-yield-forecast p {
+  margin: 0.8rem 0;
+  color: #2b3c3f;
+}
+.newsletter-section.section-crop-select ul,
+.newsletter-section.section-yield-forecast ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  color: #39484f;
+}
+.newsletter-section.section-crop-select ul li,
+.newsletter-section.section-yield-forecast ul li {
+  margin: 0.6rem 0;
+}
+.newsletter-section.section-crop-select a,
+.newsletter-section.section-yield-forecast a {
+  color: #2a8a4f;
+  text-decoration: underline;
+}
+.newsletter-section.section-crop-select a:hover,
+.newsletter-section.section-yield-forecast a:hover {
+  color: #4cb87e;
+}
+/* Crop-selection & yield-forecast sections */
+.newsletter-section.section-crop-select,
+.newsletter-section.section-yield-forecast {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #e7fdf6;
+  border-radius: 10px;
+  border: 1px solid #cdece5;
+}
+.newsletter-section.section-crop-select h2,
+.newsletter-section.section-yield-forecast h2 {
+  color: #2a8a4f;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+.newsletter-section.section-crop-select p,
+.newsletter-section.section-yield-forecast p {
+  margin: 0.8rem 0;
+  color: #2b3c3f;
+}
+.newsletter-section.section-crop-select ul,
+.newsletter-section.section-yield-forecast ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  color: #39484f;
+}
+.newsletter-section.section-crop-select ul li,
+.newsletter-section.section-yield-forecast ul li {
+  margin: 0.6rem 0;
+}
+.newsletter-section.section-crop-select a,
+.newsletter-section.section-yield-forecast a {
+  color: #2a8a4f;
+  text-decoration: underline;
+}
+.newsletter-section.section-crop-select a:hover,
+.newsletter-section.section-yield-forecast a:hover {
+  color: #4cb87e;
+}
+/* Crop-selection & yield-forecast sections */
+.newsletter-section.section-crop-select,
+.newsletter-section.section-yield-forecast {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: #e7fdf6;
+  border-radius: 10px;
+  border: 1px solid #cdece5;
+}
+.newsletter-section.section-crop-select h2,
+.newsletter-section.section-yield-forecast h2 {
+  color: #2a8a4f;
+  font-size: 1.8rem;
+  margin-bottom: 0.75rem;
+}
+.newsletter-section.section-crop-select p,
+.newsletter-section.section-yield-forecast p {
+  margin: 0.8rem 0;
+  color: #2b3c3f;
+}
+.newsletter-section.section-crop-select ul,
+.newsletter-section.section-yield-forecast ul {
+  margin: 1rem 0;
+  padding-left: 2rem;
+  color: #39484f;
+}
+.newsletter-section.section-crop-select ul li,
+.newsletter-section.section-yield-forecast ul li {
+  margin: 0.6rem 0;
+}
+.newsletter-section.section-crop-select a,
+.newsletter-section.section-yield-forecast a {
+  color: #2a8a4f;
+  text-decoration: underline;
+}
+.newsletter-section.section-crop-select a:hover,
+.newsletter-section.section-yield-forecast a:hover {
+  color: #4cb87e;
+}

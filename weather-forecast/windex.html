@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Forecast – Crop‐Yield Insights</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      background: linear-gradient(
+        120deg,
+        #0a1e3d,
+        #1b3355,
+        #224677
+      );
+      background-size: 200% 200%;
+      animation: darkBlueBG 15s ease infinite;
+      color: #fff;
+    }
+    @keyframes darkBlueBG {
+      0%   { background-position: 0%   50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0%   50%; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      body {
+        animation: none;
+        background-position: 0% 50%;
+      }
+    }
+    header {
+      background: rgba(0,0,0,0.4);
+      color: #fff;
+      padding: 1.2rem 2rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .intro {
+      background: rgba(255,255,255,0.1);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .intro h1 {
+      color: #cceeff;
+    }
+    .intro p {
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+    .all-btn {
+      display: inline-block;
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.6rem;
+      background-color: #1f5e9e;
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      border-radius: 6px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    .all-btn:hover {
+      background-color: #144a7a;
+      transform: translateY(-2px);
+    }
+    .info-section {
+      margin: 3rem 0;
+    }
+    .info-section h2 {
+      color: #d4f4ff;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .info-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+      gap: 1.8rem;
+    }
+    .info-card {
+      background: rgba(255,255,255,0.12);
+      padding: 1.8rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.2);
+    }
+    .info-card h3 {
+      margin-top: 0;
+      color: #effcff;
+    }
+    .info-card p {
+      color: #f5faff;
+      line-height: 1.5;
+    }
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: rgba(0,0,0,0.5);
+      color: #ccc;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Weather Forecast & Crop‐Yield Insights</h1>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h1>Weather Forecast</h1>
+      <p>
+        Plan your farming with precision! Check real-time weather insights on temperature, humidity, rainfall, wind and more.  
+        Integrated with our crop-prediction model for optimal decisions. Explore historical weather data, get alerts, and access educational resources to select the best time and crop for your field.
+      </p>
+      
+    </section>
+
+    <section class="info-section">
+      <h2>How Weather Impacts Crop-Yield Selection</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Rainfall & Soil Moisture</h3>
+          <p>
+            Adequate rainfall and soil moisture are vital for crop germination, root development and growth.  
+            Too little rain can result in drought stress, while excessive rainfall may cause waterlogging and nutrient leaching — both impacting yield potential.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Temperature & Heat Stress</h3>
+          <p>
+            Temperature influences crop metabolism, photosynthesis and flowering.  
+            Heat waves or cold snaps during critical growth stages can significantly reduce yield. Studies show temperature is among the most influential factors for yield prediction. :contentReference[oaicite:0]{index=0}
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Humidity, Wind & Evapotranspiration</h3>
+          <p>
+            Humidity and wind affect evaporation rates and plant water loss, impacting how much water the crop actually uses versus what is available.  
+            Understanding these metrics helps in irrigation scheduling and crop selection for your region.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Historical Weather Patterns</h3>
+          <p>
+            Insights from past years’ weather help anticipate conditions and select suitable crops or timing.  
+            Data including rainfall, temperature trends, extreme events are used in crop-yield prediction systems. :contentReference[oaicite:1]{index=1}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="info-section">
+      <h2>Recommended Actions for Farmers</h2>
+      <div class="info-cards">
+        <div class="info-card">
+          <h3>Check the forecast regularly</h3>
+          <p>
+            Use our dashboard to monitor upcoming weather events (rain, heat, storms).  
+            Prepare irrigation, cover crops or adjust field activities accordingly to avoid stress on your crops.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Choose crops suitable for your micro-climate</h3>
+          <p>
+            Based on your field’s typical weather and soil, pick varieties that handle the prevalent conditions (e.g., heat-tolerant, drought-resistant).  
+            Weather-integrated crop-yield models use such data for better recommendations.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Time planting for favourable conditions</h3>
+          <p>
+            Plant when conditions are optimal (soil moisture, moderate temperature) rather than under extreme weather.  
+            This improves establishment, growth and final yield.
+          </p>
+        </div>
+        <div class="info-card">
+          <h3>Use weather data to schedule irrigation & inputs</h3>
+          <p>
+            Align fertiliser, irrigation and pest-control with upcoming weather (e.g., apply fertiliser when rain is unlikely).  
+            This leads to better efficiency and avoids loss of inputs through runoff or heat stress.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Your Farm Planning Company. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

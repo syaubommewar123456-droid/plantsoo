@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ask Questions | Team Plantso</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Page-specific overrides */
+    body {
+      background: #0a1f44;
+      color: #f0f8ff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      padding: 40px 20px;
+      text-align: center;
+      background-color: #082a60;
+    }
+    main {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #c3d9ff;
+    }
+    main p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    form {
+      background: #112b60;
+      padding: 30px;
+      border-radius: 8px;
+      position: relative;
+    }
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #f0f8ff;
+    }
+    form input[type="text"],
+    form input[type="email"],
+    form textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #295a9b;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      background: #0f284f;
+      color: #f0f8ff;
+    }
+    form input:invalid,
+    form textarea:invalid {
+      border-color: #ff5555;
+    }
+    .note {
+      font-size: 0.9rem;
+      color: #a8c4ff;
+      margin-top: -10px;
+      margin-bottom: 20px;
+    }
+    form button {
+      background-color: #f0f8ff;
+      color: #0a1f44;
+      padding: 14px 34px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color .3s, transform .3s;
+    }
+    form button:hover {
+      background-color: #e8e8e8;
+      transform: translateY(-2px);
+    }
+    .success-message {
+      display: none;
+      background: #0e4e7a;
+      border: 1px solid #3ad29f;
+      color: #3ad29f;
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    @media (max-width: 600px) {
+      main { padding: 0 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Ask Questions</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Need Help? We’re Here.</h2>
+      <p>
+        Have a question about our plant-disease-identification tool? Fill in the form below and our team will respond within 24 hours.
+        Prefer self-help? Visit our <a href="pages/resources/faqs.html" style="color:#c3d9ff; text-decoration:underline;">FAQ section</a>.
+      </p>
+
+      <form id="questionForm" novalidate>
+        <div class="success-message" id="successMessage">
+          Thank you! Your question has been submitted. We’ll get back to you soon.
+        </div>
+
+        <label for="name">Your Name <span aria-hidden="true">*</span></label>
+        <input type="text" id="name" name="name" required placeholder="John Doe" autocomplete="name">
+
+        <label for="email">Your Email <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required placeholder="you@example.com" autocomplete="email">
+        <div class="note">We’ll send our reply to this email.</div>
+
+        <label for="question">Your Question <span aria-hidden="true">*</span></label>
+        <textarea id="question" name="question" rows="4" required placeholder="Describe your issue or ask your question here…"></textarea>
+
+        <button type="submit">Submit</button>
+      </form>
+
+    </section>
+  </main>
+
+  <footer>
+    <!-- paste your full footer markup here -->
+  </footer>
+
+  <script src="footer.js"></script>
+  <script>
+    // Handle the form submission
+    document.getElementById("questionForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var question = document.getElementById("question").value;
+
+      // Prepare message to send to WhatsApp
+      var message = `*New Question from Website*\n\nName: ${name}\nEmail: ${email}\nQuestion: ${question}`;
+      
+      // WhatsApp URL format
+      var whatsappUrl = `https://wa.me/7038831856?text=${encodeURIComponent(message)}`;
+
+      // Redirect user to WhatsApp with pre-filled message
+      window.location.href = whatsappUrl;
+
+      // Show success message
+      document.getElementById("successMessage").style.display = "block";
+
+      // Optionally, reset form
+      document.getElementById("questionForm").reset();
+    });
+  </script>
+</body>
+</html>
+

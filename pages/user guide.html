@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Guides | Team Plantso</title>
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #1e1e1e;
+      color: #fff;
+      line-height: 1.6;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #00ccff;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    /* Main content styles */
+    main {
+      padding: 40px 20px;
+    }
+
+    /* Search Bar */
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 1.1em;
+      border: 2px solid #00ccff;
+      border-radius: 25px;
+      width: 60%;
+      background-color: #333;
+      color: #fff;
+    }
+
+    /* Accordion styles */
+    .accordion {
+      background-color: #333;
+      border: 1px solid #00ccff;
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .accordion-header {
+      padding: 15px;
+      font-size: 1.4em;
+      cursor: pointer;
+      background-color: #00ccff;
+      color: #fff;
+      border: none;
+      text-align: left;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .accordion-content {
+      padding: 15px;
+      background-color: #444;
+      display: none;
+      border-top: 1px solid #00ccff;
+    }
+
+    .accordion.active .accordion-content {
+      display: block;
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer a {
+      color: #00ccff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      section h2 {
+        font-size: 1.6em;
+      }
+
+      section p {
+        font-size: 1em;
+      }
+
+      .search-input {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>User Guides</h1>
+  </header>
+
+  <main>
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="Search Guides..." id="guideSearch">
+    </div>
+
+    <!-- Accordion for User Guides -->
+    <div class="accordion">
+      <button class="accordion-header">Guide 1: Preparing Your Photo</button>
+      <div class="accordion-content">
+        <p>Ensure the leaf or stem is clearly visible, well-lit, background contrast-free, and the entire affected area is captured. This will help the system analyze the image accurately and provide the best results.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header">Guide 2: Uploading the Image</button>
+      <div class="accordion-content">
+        <p>Click the ‘Upload’ button, select your image, and wait for the processing. The system will analyze your photo and provide results shortly. Ensure the image is clear and of good quality to improve diagnosis accuracy.</p>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header">Guide 3: Understanding The Result</button>
+      <div class="accordion-content">
+        <p>Once your image is processed, you will receive the following information:</p>
+        <ul>
+          <li><strong>Disease Name:</strong> Identifies the plant disease detected.</li>
+          <li><strong>Severity Level:</strong> Indicates if the disease is low, medium, or high in severity.</li>
+          <li><strong>Recommended Actions:</strong> Includes suggestions like removing infected parts, treating the plant, or taking preventive measures.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header">Guide 4: Follow-Up Actions</button>
+      <div class="accordion-content">
+        <p>Based on the results and recommendations, you may need to:</p>
+        <ul>
+          <li>Adjust irrigation schedules</li>
+          <li>Apply fungicides or pesticides</li>
+          <li>Rotate crops or change farming practices</li>
+          <li>Consult an expert agronomist for further advice</li>
+        </ul>
+        <p>Always follow up on the recommendations for optimal plant health and better crop yield.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plantso. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Service</a></p>
+    <p>For support, contact us at: <a href="mailto:swayambommewar@gmail.com">swayambommewar@gmail.com</a></p>
+  </footer>
+
+  <script src="footer.js"></script>
+  <script>
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion-header');
+    accordions.forEach(acc => {
+      acc.addEventListener('click', () => {
+        acc.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Search functionality
+    document.getElementById('guideSearch').addEventListener('input', function(e) {
+      const searchQuery = e.target.value.toLowerCase();
+      const guides = document.querySelectorAll('.accordion');
+
+      guides.forEach(guide => {
+        const text = guide.textContent.toLowerCase();
+        if (text.includes(searchQuery)) {
+          guide.style.display = 'block';
+        } else {
+          guide.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

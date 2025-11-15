@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Farming Guide</title>
+  <style>
+    /* Background with dark-blue gradient and subtle animation */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(180deg, #001f3f, #003366);
+      color: #fff;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    /* Rain / particle effect background */
+    .rain {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 3px 50px;
+      animation: rain 0.6s linear infinite;
+      opacity: 0.15;
+    }
+    @keyframes rain {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 50px; }
+    }
+
+    /* Content box styling */
+    .content {
+      max-width: 800px;
+      padding: 80px 40px;
+      position: relative;
+      z-index: 2;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .content h1 {
+      font-size: 2.5em;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: #00ccff;
+      text-shadow: 0 0 10px #00ccff;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px #00ccff; }
+      to { text-shadow: 0 0 25px #00ffff, 0 0 50px #00ccff; }
+    }
+
+    .content p {
+      font-size: 1.1em;
+      line-height: 1.8em;
+      color: #e0e0e0;
+    }
+
+    /* New section for detailed information */
+    .details-section {
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 40px;
+      box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
+    }
+
+    .details-section h2 {
+      font-size: 2em;
+      margin-bottom: 15px;
+      color: #00ccff;
+    }
+
+    .details-section ul {
+      list-style-type: disc;
+      margin-left: 20px;
+    }
+
+    .details-section li {
+      margin-bottom: 10px;
+      color: #e0e0e0;
+      font-size: 1.1em;
+    }
+
+    /* Smart Farming Guidelines */
+    .guidelines-section {
+      margin-top: 40px;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(0, 204, 255, 0.5);
+    }
+
+    .guidelines-section h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00ccff;
+    }
+
+    .guidelines-section ul {
+      list-style-type: square;
+      margin-left: 30px;
+    }
+
+    .guidelines-section li {
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      color: #e0e0e0;
+    }
+
+    .all-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 12px 30px;
+      background: #00ccff;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 0 20px #00ccff;
+      transition: all 0.3s ease;
+    }
+
+    .all-btn:hover {
+      background: #0099cc;
+      box-shadow: 0 0 40px #00ffff;
+      transform: translateY(-3px);
+    }
+
+    /* Floating glowing particles */
+    .glow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .glow span {
+      position: absolute;
+      display: block;
+      width: 5px;
+      height: 5px;
+      background: #00ffff;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #00ffff;
+      animation: float 5s linear infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0) scale(1); opacity: 1; }
+      100% { transform: translateY(-100vh) scale(0.5); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="rain"></div>
+  <div class="glow">
+    <span style="left: 10%; animation-delay: 1s;"></span>
+    <span style="left: 30%; animation-delay: 2s;"></span>
+    <span style="left: 50%; animation-delay: 0.5s;"></span>
+    <span style="left: 70%; animation-delay: 1.5s;"></span>
+    <span style="left: 90%; animation-delay: 2.5s;"></span>
+  </div>
+
+  <div class="content">
+    <h1>Smart Farming, Simple Guidance</h1>
+    <p>
+      Smart Crop Guide offers a simple, step-by-step plan for growing crops.
+      It provides expert planting tips, tracks growth stages, and sends watering
+      reminders. The app also gives pest control advice, harvest timing,
+      weather updates, and fertilizer recommendations to ensure healthy crops.
+    </p>
+
+    <a href="dashboard.html" class="all-btn">More Info</a>
+
+    <!-- New section with details about Smart Farming -->
+    <div class="details-section">
+      <h2>How Smart Farming Works</h2>
+      <p>
+        Smart Farming Guide is designed to optimize crop yields and improve overall farming efficiency. The app uses a combination of technology and expert advice to create an easy-to-follow roadmap for farmers. Here's how it helps:
+      </p>
+      <ul>
+        <li><strong>Step-by-Step Planting Guidance:</strong> Get detailed instructions on planting each crop, including optimal planting depth and spacing.</li>
+        <li><strong>Growth Stage Monitoring:</strong> Track your crops' growth progress with automated reminders and alerts.</li>
+        <li><strong>Watering Reminders:</strong> Receive timely notifications to water your crops, ensuring they stay hydrated and healthy.</li>
+        <li><strong>Pest Control Advice:</strong> Get expert recommendations on how to manage pests and protect your crops without harmful chemicals.</li>
+        <li><strong>Harvest Timing:</strong> Know the best time to harvest based on your crop type and environmental conditions.</li>
+        <li><strong>Weather Updates:</strong> Stay informed about local weather conditions that might affect your crops.</li>
+        <li><strong>Fertilizer Recommendations:</strong> Receive advice on the type and amount of fertilizer to use at different crop growth stages.</li>
+      </ul>
+    </div>
+
+    <!-- New section for Smart Farming Guidelines -->
+    <div class="guidelines-section">
+      <h3>Smart Farming Guidelines</h3>
+      <p>Follow these best practices to ensure your crops grow to their full potential:</p>
+      <ul>
+        <li><strong>Choose the Right Crop:</strong> Consider factors such as climate, soil type, and market demand when selecting crops for planting.</li>
+        <li><strong>Soil Preparation:</strong> Test soil for nutrient levels. Use organic compost and balanced fertilizers to improve soil health.</li>
+        <li><strong>Plant at the Right Time:</strong> Timing is key! Use local weather data to determine the optimal planting season for each crop.</li>
+        <li><strong>Water Efficiently:</strong> Use drip irrigation or sprinklers to reduce water wastage. Adjust watering schedules based on weather conditions.</li>
+        <li><strong>Pest Management:</strong> Implement integrated pest management strategies. Use biological control methods and avoid overuse of chemical pesticides.</li>
+        <li><strong>Monitor Growth Regularly:</strong> Track crop growth stages to know when to apply nutrients, water, and other care routines.</li>
+      </ul>
+
+      <!-- New paragraph for detailed Smart Farming explanation -->
+      <p>
+        Smart farming is an agricultural practice that leverages advanced technologies to optimize the entire farming process. It incorporates tools such as Internet of Things (IoT) devices, sensors, artificial intelligence (AI), and big data analytics to gather and analyze data for improved decision-making. These technologies help farmers monitor soil moisture, temperature, crop health, and more, allowing them to make real-time adjustments for better productivity and sustainability.
+      </p>
+      <p>
+        With smart farming, farmers can automate irrigation systems, apply fertilizers only when necessary, and use drones for crop surveillance. This reduces water consumption, minimizes the use of pesticides, and lowers the environmental impact. Additionally, data analytics allows for predictive modeling, helping farmers forecast weather patterns, pest infestations, and potential crop diseases. These insights empower farmers to make proactive decisions that ultimately increase crop yield and reduce waste.
+      </p>
+      <p>
+        Beyond improving productivity, smart farming also promotes sustainability. By reducing the overuse of resources like water and chemicals, farmers can maintain a balance with nature while growing more food. Smart farming systems can be integrated with renewable energy sources like solar and wind, making farming operations more energy-efficient and eco-friendly. As the global demand for food continues to rise, smart farming technologies are essential in meeting the challenge of feeding a growing population while protecting the environment.
+      </p>
+    </div>
+  </div>
+</body>
+</html>

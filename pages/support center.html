@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support Center | Team Plantso</title>
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f6f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      background-color: #f4f6f9;
+    }
+
+    section {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    section h2 {
+      color: #4CAF50;
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      color: #555;
+    }
+
+    textarea {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      resize: vertical;
+      margin-bottom: 15px;
+      transition: border-color 0.3s ease;
+    }
+
+    textarea:focus {
+      border-color: #4CAF50;
+      outline: none;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      font-size: 16px;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    footer {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Support Center</h1>
+  </header>
+
+  <main>
+    <section>
+      <p>If you need help with the tool, uploads, interpretation, or your account, we’re here for you.</p>
+
+      <h2>Submit your issue</h2>
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLScnl3NvRVI2_vakV7iTm12vKcpgwS8xyDiwI---jxQkF17ysQ/viewform?usp=dialog" method="get" target="_blank">
+        <label for="issue">Describe your issue:</label><br>
+        <textarea id="issue" name="entry.123456789" rows="4" required></textarea><br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Team Plantso. All rights reserved.</p>
+  </footer>
+
+  <script src="footer.js"></script>
+</body>
+</html>

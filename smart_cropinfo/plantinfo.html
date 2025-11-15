@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plant Disease Identification</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0a1f44;
+      color: #f0f8ff;
+      line-height: 1.6;
+    }
+    header, footer {
+      padding: 20px;
+      text-align: center;
+    }
+    header {
+      background-color: #082a60;
+    }
+    footer {
+      background-color: #082a60;
+      font-size: 0.9rem;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    .content {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      margin-bottom: 60px;
+    }
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 2rem;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      color: #c3d9ff;
+    }
+    p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+    }
+    ul.features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+    }
+    ul.features li {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+    }
+    ul.features li span {
+      display: inline-block;
+      font-size: 1.4rem;
+      width: 32px;
+      margin-right: 10px;
+    }
+    a.all-btn {
+      display: inline-block;
+      padding: 14px 28px;
+      font-size: 1rem;
+      color: #0a1f44;
+      background-color: #f0f8ff;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color .3s, transform .3s;
+    }
+    a.all-btn:hover {
+      background-color: #e8e8e8;
+      transform: translateY(-2px);
+    }
+    /* Supported crops table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+    table th, table td {
+      border: 1px solid #295a9b;
+      padding: 10px;
+      text-align: left;
+    }
+    table th {
+      background-color: #082a60;
+      color: #c3d9ff;
+    }
+    table td {
+      background-color: #0e316d;
+    }
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 20px;
+    }
+    .faq-item h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #a8c4ff;
+    }
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      h2 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Agri-Smart: Crop Health & Disease Detection</h1>
+  </header>
+
+  <section id="plant-disease">
+    <div class="container">
+      <div class="content" id="intro-block">
+        <h1>Plant Disease Identification</h1>
+        <p>
+          Assist farmers in detecting plant diseases by enabling image uploads, utilizing this analysis for prompt and precise identification — enhancing farming efficiency and crop management.
+        </p>
+        <ul class="features">
+          <li><span>📸</span> Upload a clear image of the affected plant part (leaf, stem, fruit).</li>
+          <li><span>🧠</span> Our intelligent system analyses your image and identifies possible diseases early.</li>
+          <li><span>💡</span> Receive detailed information: disease name, severity level & recommended action.</li>
+          <li><span>🌱</span> Take timely steps to protect your crops, reduce losses and boost yield.</li>
+        </ul>
+        <a href="#" class="all-btn">More Info</a>
+      </div>
+
+      <div class="content" id="why-matters">
+        <h2>Why It Matters</h2>
+        <p>
+          Plant diseases are a major threat to crop yield and quality worldwide. Without proper identification, efforts to control disease may be wasted or misdirected. :contentReference[oaicite:0]{index=0}
+        </p>
+        <p>
+          Early and accurate detection of pathogens (fungi, bacteria, viruses, nematodes) allows targeted action, lowers unnecessary pesticide use and supports sustainable agriculture. :contentReference[oaicite:1]{index=1}
+        </p>
+      </div>
+
+      <div class="content" id="supported-crops">
+        <h2>Supported Crops & Diseases</h2>
+        <p>Below is a sample list of crops and diseases that our system currently supports (and more are being added regularly):</p>
+        <table>
+          <tr>
+            <th>Crop</th>
+            <th>Common Diseases</th>
+            <th>Typical Symptoms</th>
+          </tr>
+          <tr>
+            <td>Tomato / Potato</td>
+            <td>Early Blight, Late Blight</td>
+            <td>Brown/black spots on leaves, fruit rot, rapid spread in wet conditions. :contentReference[oaicite:2]{index=2}</td>
+          </tr>
+          <tr>
+            <td>Wheat / Barley</td>
+            <td>Rusts, Smuts</td>
+            <td>Orange/yellow pustules on leaves, reduced grain yield. :contentReference[oaicite:3]{index=3}</td>
+          </tr>
+          <tr>
+            <td>Various vegetables / ornamentals</td>
+            <td>Powdery Mildew, Downy Mildew</td>
+            <td>White powdery coating on leaves or greyish fuzz underside; thrives in high humidity. :contentReference[oaicite:4]{index=4}</td>
+          </tr>
+          <tr>
+            <td>Multiple hosts</td>
+            <td>Mosaic Viruses</td>
+            <td>Leaf mottling, yellow patches, stunted growth. :contentReference[oaicite:5]{index=5}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="content" id="how-it-works">
+        <h2>How Our Feature Works</h2>
+        <p>To make the disease identification process farmer-friendly and efficient, here’s the workflow:</p>
+        <ul class="features">
+          <li><span>🔍</span> You upload a photo of the plant part showing signs of disease.</li>
+          <li><span>⚙️</span> The image is processed and compared with our database of known plant disease images (powered by machine-learning/AI).</li>
+          <li><span>📈</span> You receive a result showing the likely disease, severity level, and actionable next steps.</li>
+          <li><span>📊</span> Early detection and recommended guidance help you act before major crop damage occurs.</li>
+        </ul>
+      </div>
+
+      <div class="content" id="benefits">
+        <h2>Benefits for Farmers</h2>
+        <p>
+          By using this tool, farmers can improve crop protection, reduce labour and inputs cost, increase yield reliability — ultimately helping to ensure better farm profitability and sustainability.
+        </p>
+      </div>
+
+      <div class="content" id="faq">
+        <h2>Frequently Asked Questions (FAQ)</h2>
+        <div class="faq-item">
+          <h3>Q: How accurate is the identification?</h3>
+          <p>
+            Our system uses a large dataset of labelled plant disease images and machine-learning models to provide high-accuracy predictions. However, we always recommend using the result as a guide and consulting an agronomist for high-stakes decisions.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Q: What happens after I get the result?</h3>
+          <p>
+            Once you receive the result, you’ll get the likely disease name, severity classification (low/medium/high), and suggested next steps (e.g., remove diseased leaves, improve drainage, apply fungicide or resistant variety).
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Q: Which crops are supported?</h3>
+          <p>
+            We support a growing list of crops (vegetables, cereals, fruits). See the “Supported Crops & Diseases” table above. If your crop isn't listed yet, you can still upload — the system may still offer useful guidance and we’re frequently expanding coverage.
+          </p>
+        </div>
+        <div class="faq-item">
+          <h3>Q: Is there a cost?</h3>
+        <p>
+          Basic upload and analysis are free; advanced features, such as detailed treatment plans or agronomist consultation, may be offered via subscription or paid add-on.
+        </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 PLANTSO Solutions. All rights reserved.</p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const observerOptions = { threshold: 0.3 };
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if(entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      const blocks = document.querySelectorAll('#plant-disease .content');
+      blocks.forEach(b => observer.observe(b));
+    });
+  </script>
+</body>
+</html>

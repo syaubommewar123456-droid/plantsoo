@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions | Team Plantso</title>
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* Global styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #121212; /* Dark background */
+      color: #fff; /* Light text color */
+      line-height: 1.6;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #1e1e1e; /* Dark gray header */
+      color: #00ccff; /* Light blue text */
+      text-align: center;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    /* Main content styles */
+    main {
+      padding: 40px 20px;
+    }
+
+    section {
+      background-color: #2c2c2c; /* Dark section background */
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+    }
+
+    section h2 {
+      font-size: 1.8em;
+      color: #00ccff; /* Light blue text for headers */
+      margin-bottom: 10px;
+    }
+
+    section p {
+      font-size: 1.1em;
+      margin-bottom: 20px;
+      color: #ccc; /* Lighter gray text */
+    }
+
+    /* Search bar styles */
+    .search-bar {
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .search-input {
+      padding: 10px;
+      font-size: 1.1em;
+      border: 2px solid #00ccff; /* Light blue border */
+      border-radius: 25px;
+      width: 60%;
+      background-color: #333; /* Dark input background */
+      color: #fff; /* White text */
+    }
+
+    .search-input::placeholder {
+      color: #ccc; /* Placeholder text color */
+    }
+
+    /* Accordion styles */
+    .accordion {
+      background-color: #2c2c2c; /* Dark accordion background */
+      border: 1px solid #00ccff; /* Light blue border */
+      margin-bottom: 10px;
+      border-radius: 8px;
+    }
+
+    .accordion-header {
+      padding: 15px;
+      font-size: 1.4em;
+      cursor: pointer;
+      background-color: #00ccff; /* Light blue header */
+      color: #fff; /* White text */
+      border: none;
+      text-align: left;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .accordion-content {
+      padding: 15px;
+      background-color: #333; /* Dark content background */
+      display: none;
+      border-top: 1px solid #00ccff; /* Light blue border for content */
+    }
+
+    .accordion.active .accordion-content {
+      display: block;
+    }
+
+    /* Feedback section */
+    .feedback {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .feedback button {
+      background-color: #00ccff; /* Light blue button */
+      color: #fff; /* White text */
+      padding: 8px 15px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 1em;
+    }
+
+    .feedback button:hover {
+      background-color: #0099cc; /* Darker blue on hover */
+    }
+
+    /* Footer styling */
+    footer {
+      background-color: #1e1e1e; /* Dark footer background */
+      color: #fff; /* White text */
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+
+    footer a {
+      color: #00ccff; /* Light blue text for links */
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive styling */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+
+      section h2 {
+        font-size: 1.6em;
+      }
+
+      section p {
+        font-size: 1em;
+      }
+
+      .search-input {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Frequently Asked Questions</h1>
+  </header>
+
+  <main>
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" class="search-input" placeholder="Search FAQs..." id="faqSearch">
+    </div>
+
+    <!-- FAQ Accordion -->
+    <div class="accordion">
+      <button class="accordion-header">How do I upload a photo?</button>
+      <div class="accordion-content">
+        <p>Click on the “Upload Image” button, select a clear photo of the affected plant part, and submit. Make sure the photo is well-lit and in focus to ensure accurate analysis.</p>
+        <div class="feedback">
+          <button>👍 Helpful</button>
+          <button>👎 Not Helpful</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header">Which crops are supported?</button>
+      <div class="accordion-content">
+        <p>We currently support a range of crops, including tomatoes, potatoes, wheat, and maize. We’re continuously working to expand our crop database to help you with more options in the future.</p>
+        <div class="feedback">
+          <button>👍 Helpful</button>
+          <button>👎 Not Helpful</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion">
+      <button class="accordion-header">Is the diagnosis 100% accurate?</button>
+      <div class="accordion-content">
+        <p>While our system is trained on a large dataset and achieves high accuracy in detecting diseases, it is a tool to assist farmers in decision-making. We always recommend consulting an agronomist or a local expert for final confirmation of any diagnosis.</p>
+        <div class="feedback">
+          <button>👍 Helpful</button>
+          <button>👎 Not Helpful</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Section -->
+    <section>
+      <h2>Log in for Personalized Support</h2>
+      <p>Log in to your account to access more personalized support, track your queries, and get recommendations based on your previous activities.</p>
+      <a href="login.html" class="all-btn">Log in</a>
+    </section>
+
+    <!-- More FAQs -->
+    <section>
+      <h2>How does the crop suitability feature work?</h2>
+      <p>By entering your location and preferred crop type, our app uses climate data and soil conditions to recommend the most suitable crops for your area. It also provides **planting schedules**, **fertilizer suggestions**, and **water management tips** to help you maximize yield.</p>
+    </section>
+
+    <section>
+      <h2>Can I track my crop's growth progress?</h2>
+      <p>Yes! Our app allows you to monitor the growth stages of your crops. Based on your selected crop, you’ll receive **growth stage alerts**, and we’ll notify you about key activities like irrigation, pest control, and harvest time.</p>
+    </section>
+
+    <!-- Help Center Link -->
+    <section>
+      <h2>Browse Our Help Center</h2>
+      <p>If you need more detailed assistance or troubleshooting steps, visit our **Help Center** for articles and guides on all app features.</p>
+      <a href="support center.html" class="all-btn">Browse Help Center</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Plantso. All rights reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms use.html">Terms of Service</a></p>
+  </footer>
+
+  <script src="footer.js"></script>
+  <script>
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion-header');
+    accordions.forEach(acc => {
+      acc.addEventListener('click', () => {
+        acc.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Search functionality
+    document.getElementById('faqSearch').addEventListener('input', function(e) {
+      const searchQuery = e.target.value.toLowerCase();
+      const faqSections = document.querySelectorAll('section, .accordion');
+
+      faqSections.forEach(section => {
+        const text = section.textContent.toLowerCase();
+        if (text.includes(searchQuery)) {
+          section.style.display = 'block';
+        } else {
+          section.style.display = 'none';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

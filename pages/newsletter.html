@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Newsletter | Team Plantso</title>
+  <link rel="stylesheet" href="newsletter.css">
+</head>
+<body>
+  <!-- Floating leaves animation container -->
+  <div class="floating-leaves">
+    <i></i><i></i><i></i><i></i><i></i>
+  </div>
+
+  <header class="newsletter-header">
+    <h1>Stay Connected with Team Plantso</h1>
+    <p class="subtitle">Get the latest on crop-disease alerts, expert tips and new features.</p>
+    <button id="theme-toggle" aria-label="Toggle dark/light theme">🌙</button>
+  </header>
+
+  <main class="newsletter-container">
+    <section class="signup-card">
+      <div class="illustration"></div>
+      <form class="signup-form" action="subscribe.php" method="post" id="newsletterForm">
+         <label for="newsletter-email">Email Address</label>
+         <input type="email" id="newsletter-email" name="email" placeholder="you@example.com" required>
+         <button type="submit">Subscribe Now</button>
+         <p class="note">We respect your privacy. No spam. Unsubscribe anytime.</p>
+      </form>
+
+    </section>
+
+    <div class="newsletter-section section-harvest">
+      <h2>🌾 Monthly Harvest & Insights</h2>
+      <p>This month we are harvesting <strong>spinach, kale & radishes</strong> — see what’s ripe, what’s coming soon, and what you should plant next.</p>
+      <ul>
+        <li><strong>Spinach:</strong> Ready in 7-10 days. Ideal for cool, shaded areas.</li>
+        <li><strong>Kale:</strong> Rich in nutrients — feed lightly and harvest outer leaves only.</li>
+        <li><strong>Radishes:</strong> Quick-grow snack crop — best when soil kept moist.</li>
+      </ul>
+      <p>Want to dig deeper? <a href="blog/harvest-guide.html">Read our full Harvest Guide</a>.</p>
+    </div>
+
+    <div class="newsletter-section section-grower-tip">
+      <h2>🌱 Grower Tip & Ask-Us Corner</h2>
+      <p><strong>This month’s tip:</strong> Use a thin mulch layer around your plants to retain moisture and suppress weeds — especially during warm transition months.</p>
+      <p>Got a question for our team? Submit it below and we’ll answer in the next issue.</p>
+      <form class="tip-form" action="#" method="post">
+        <label for="tip-question">Your question for Plantso experts:</label><br>
+        <textarea id="tip-question" name="tip-question" placeholder="Type your question here…" rows="3" required></textarea><br>
+        <button type="submit">Submit Question</button>
+      </form>
+    </div>
+
+    <div class="newsletter-section section-crop-select">
+      <h2>🌿 Smart Crop Selection & Forecast</h2>
+      <p>Choosing the right crop today means a stronger harvest tomorrow. Here’s how you can plan ahead:</p>
+      <ul>
+         <li><strong>Recommended Crops:</strong> Based on your region’s soil, climate and market demand, opt for varieties like spinach, kale or radish that fit the upcoming season.</li>
+        <li><strong>Yield Forecast:</strong> Our model estimates up to <strong>15 % above average</strong> if you follow our guidelines and time your planting well.</li>
+       <li><strong>Why it works:</strong> Recent research shows that using machine-learning with weather, soil & crop data significantly improves yield predictions. :contentReference[oaicite:0]{index=0}</li>
+      </ul>
+     <p>Start by running our <a href="https://crop-recomm.streamlit.app/">Crop Selector Tool</a> today to find your best match.</p>
+    </div>
+    <div class="newsletter-section section-yield-forecast">
+      <h2>📊 Forecast Your Next Big Harvest</h2>
+      <p>Want to know how much you’ll harvest this season? Here’s what to look at:</p>
+      <ul>
+        <li>Key yield drivers: rainfall, temperature, soil health, planting date and crop variety all influence outcome. :contentReference[oaicite:1]{index=1}</li>
+        <li>Using our Yield Predictor in the Plantso platform, you can explore three scenarios: <em>conservative, expected, best-case</em>.</li>
+        <li>Mitigating risks: By choosing the right variety, adjusting planting time, and optimizing irrigation, you can offset climate uncertainty and boost your results.</li>
+      </ul>
+     <p>Ready? <a href="crop-yield-predictor/index.html">Go to Yield Predictor</a> and start modelling your field today.</p>
+    </div>
+
+
+
+  </main>
+
+  <footer class="newsletter-footer">
+    <div class="footer-container">
+      <p>© 2025 Team Plantso. All Rights Reserved.</p>
+      <a href="terms.html">Terms of Use</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="">Home</a>
+    </div>
+  </footer>
+
+  <script>
+    // Theme toggle + preference saving
+    const toggleButton = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+      localStorage.setItem('theme', theme);
+    });
+  </script>
+</body>
+</html>

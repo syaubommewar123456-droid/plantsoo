@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Community Forum | Team Plantso</title>
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #121212; /* Dark background */
+      color: #f0f8ff;
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+    header {
+      background-color: #4CAF50; /* Vibrant header */
+      color: #f0f8ff;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    main {
+      padding: 60px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      justify-content: center;
+      align-items: center;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    .forum-section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .forum-card {
+      background-color: #1c1c1c;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .forum-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .forum-card h2 {
+      font-size: 1.8rem;
+      color: #4CAF50;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .forum-card p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+    }
+
+    .forum-card ul {
+      list-style-type: none;
+      color: #cfcfcf;
+    }
+
+    .forum-card ul li {
+      font-size: 1.1rem;
+      margin: 10px 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .forum-card ul li::before {
+      content: "✔";
+      color: #4CAF50;
+      margin-right: 10px;
+    }
+
+    footer {
+      background-color: #4CAF50;
+      color: #f0f8ff;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 30px 10px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .forum-card {
+        padding: 20px;
+      }
+
+      .forum-card h2 {
+        font-size: 1.6rem;
+      }
+
+      .forum-card p, .forum-card ul li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Community Forum | Team Plantso</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>Welcome to the Community Forum</h2>
+      <p>
+        Join our community to ask questions, share knowledge, discuss new features, and collaborate with other members working towards a better future for agriculture.
+      </p>
+
+      <div class="forum-section">
+        <!-- Forum Categories -->
+        <div class="forum-card">
+          <h2>General Discussions</h2>
+          <p>Engage with the community about plant health, agriculture, and farming best practices. Share ideas and ask for advice.</p>
+          <ul>
+            <li>Plant Disease Management</li>
+            <li>Crop Health Monitoring</li>
+            <li>Farm Management Tips</li>
+          </ul>
+        </div>
+
+        <div class="forum-card">
+          <h2>Feature Requests</h2>
+          <p>Suggest new features you'd love to see on Team Plantso. Help shape the future of the platform by contributing your ideas!</p>
+          <ul>
+            <li>Crop Forecasting</li>
+            <li>Pest Detection Tools</li>
+            <li>New Data Integrations</li>
+          </ul>
+        </div>
+
+        <div class="forum-card">
+          <h2>Bug Reports</h2>
+          <p>Found an issue or bug? Report it here and let us know. Our community can help troubleshoot and find solutions.</p>
+          <ul>
+            <li>Website/Platform Bugs</li>
+            <li>Data Accuracy Issues</li>
+            <li>Performance Problems</li>
+          </ul>
+        </div>
+
+        <div class="forum-card">
+          <h2>Research & Collaborations</h2>
+          <p>Discuss agricultural research, collaborate on new projects, and share datasets that can help advance the science of plant health and crop forecasting.</p>
+          <ul>
+            <li>Research Papers</li>
+            <li>Open Datasets</li>
+            <li>Collaborative Projects</li>
+          </ul>
+        </div>
+
+        <div class="forum-card">
+          <h2>Success Stories</h2>
+          <p>Share how you’ve successfully used Team Plantso tools to improve your farming practices. Inspire others with your experiences!</p>
+          <ul>
+            <li>Improved Crop Yield</li>
+            <li>Successful Pest Control</li>
+            <li>Efficient Resource Use</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Team Plantso | All rights reserved.</p>
+  </footer>
+
+  <script src="footer.js"></script>
+</body>
+</html>

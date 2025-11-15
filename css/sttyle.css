@@ -1,0 +1,1023 @@
+/* Modernized CSS with animations inserted safely (no image scale changes) */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  color: #a53737;
+  text-decoration: none;
+}
+
+:root {
+  --bg-dark: #0D0D0D;
+  --gold: #D4AF37;
+  --soft-gold: #F1D27A;
+  --button-gold: #B8860B;
+  --heading-gold: #E9C46A;
+  --text-light: #EAEAEA;
+
+  /* Replace older palette variables with new ones */
+  --Soft-Blue: var(--gold);
+  --Soft-Red: var(--button-gold);
+  --Grayish-Blue: var(--soft-gold);
+  --Very-Dark-Blue: var(--bg-dark);
+  --box-shadow: 0.5rem 0.5rem 0 var(--gold);
+  --text-shadow: 0.4rem 0.4rem 0 rgba(0, 0, 0, 0.4);
+  --border: 0.2rem solid var(--gold);
+}
+
+/* ---------------------- Global Smooth Animations ---------------------- */
+
+section {
+  animation: fade-in 1.2s ease-out both;
+}
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------- Upgraded Neon Glow for H1 ---------------------- */
+@keyframes neon-pulse {
+  0% {
+    text-shadow:
+      0 0 6px rgba(71, 247, 71, 0.8),
+      0 0 12px rgba(25, 255, 203, 0.7),
+      0 0 22px rgba(0, 255, 255, 0.6);
+  }
+  100% {
+    text-shadow:
+      0 0 14px rgba(71, 247, 71, 1),
+      0 0 28px rgba(25, 255, 203, 0.9),
+      0 0 45px rgba(0, 255, 255, 0.8);
+  }
+}
+
+h1 {
+  animation: neon-pulse 2.5s ease-in-out infinite alternate;
+}
+
+/* ---------------------- Home Section Enhancements ---------------------- */
+
+/* Subtle floating background image (NO SIZE CHANGE) */
+@keyframes soft-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.home img {
+  animation: soft-float 6s ease-in-out infinite;
+}
+
+/* Text entrance animations */
+@keyframes slide-up {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.home h1 { animation: slide-up 1s ease-out forwards; }
+.home p { animation: slide-up 1.2s ease-out forwards; }
+
+/* ---------------------- Navbar Glass Effect ---------------------- */
+.header {
+  backdrop-filter: blur(12px);
+  background: rgba(1, 2, 22, 0.65);
+  transition: box-shadow 0.4s ease;
+}
+
+.header:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+}
+
+/* ---------------------- Button Glow Enhancements ---------------------- */
+
+.home-btn, .all-btn, .buttonn {
+  transition: box-shadow 0.3s ease, transform 0.25s ease;
+}
+
+.home-btn:hover,
+.all-btn:hover,
+.buttonn:hover {
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.6),
+              0 0 30px rgba(0, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* ---------------------- About Section Card Lift (Images unchanged) ---------------------- */
+
+.about .box {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.about .box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 255, 255, 0.4);
+}
+
+/* ---------------------- Features Section Slide-In ---------------------- */
+
+@keyframes fade-slide-side {
+  0% { opacity: 0; transform: translateX(-30px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.features .row .image,
+.features .row .content {
+  opacity: 0;
+  animation: fade-slide-side 1.2s ease forwards;
+}
+
+/* ---------------------- Footer Glow ---------------------- */
+.footer .credit:hover {
+  text-shadow: 0 0 15px cyan;
+  transition: text-shadow 0.3s ease;
+}
+
+/* ---------------------- EXTRA: Micro-interactions (no image scaling) ---------------------- */
+
+/* 1) Button ripple effect (pure CSS) - uses pseudo-element, no size change */
+.buttonn, .all-btn, .home-btn {
+  position: relative;
+  overflow: hidden; /* contain ripple */
+}
+
+.buttonn::after, .all-btn::after, .home-btn::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255,255,255,0.12);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: width 0.45s ease, height 0.45s ease, opacity 0.45s ease;
+  pointer-events: none;
+}
+
+.buttonn:active::after, .all-btn:active::after, .home-btn:active::after {
+  width: 220%;
+  height: 220%;
+  opacity: 1;
+  transition: width 0s, height 0s, opacity 0.6s ease;
+}
+
+/* 2) Nav link underline grow (no layout shift) */
+.header .navbar a {
+  position: relative;
+}
+
+.header .navbar a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 3px;
+  background: var(--Soft-Blue);
+  border-radius: 2px;
+  transition: width 0.32s ease;
+}
+
+.header .navbar a:hover::after,
+.header .navbar a:focus::after {
+  width: 70%;
+}
+
+/* 3) Accessible focus-visible states */
+:focus {
+  outline: none;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(0,200,255,0.22);
+  outline-offset: 4px;
+  border-radius: 6px;
+}
+
+/* 4) Subtle parallax-like effect for background images (pure CSS) */
+/* Works for elements using background-image; doesn't resize img tags */
+.parallax-bg {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  will-change: background-position;
+}
+
+/* 5) Soft tilt on cards using perspective (does NOT scale images) */
+.card-wrap {
+  perspective: 900px;
+}
+
+.card {
+  transform-origin: center;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.card:hover {
+  transform: rotateX(3deg) translateY(-6px);
+  box-shadow: 0 18px 40px rgba(2,50,80,0.12);
+}
+
+/* Ensure card images keep exact size and do not scale */
+.card img {
+  transform: none !important;
+}
+
+/* 6) Image skeleton shimmer while loading (class-based, does NOT change size) */
+.lazy-img {
+  position: relative;
+  background: linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.04) 100%);
+  overflow: hidden;
+}
+
+.lazy-img::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, rgba(255,255,255,0.00) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.00) 100%);
+  animation: shimmer 1.6s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+/* 7) Gentle focus hover for feature images (no scale) */
+.features .row .image:hover,
+.features .row .image:focus {
+  box-shadow: 0 18px 40px rgba(32,144,255,0.08);
+  transform: translateY(-6px);
+}
+
+/* 8) Reduce motion preference respects (disable animations) */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
+
+/* ---------------------- Footer Glow ---------------------- */
+.footer .credit:hover {
+  text-shadow: 0 0 15px cyan;
+  transition: text-shadow 0.3s ease;
+}
+
+/* ---------------------- Original User Styles (unchanged except animations) ---------------------- */
+
+/* navbar sections starts */
+
+.header {
+  padding: 2rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0%;
+  left: 0;
+  z-index: 10000;
+  background-color: #010216f5;
+  box-shadow: 0rem 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+}
+.header:hover{
+  /* remove scale for realistic hover, keep subtle lighting */
+  transform: none;
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(86, 216, 255, 0.12);
+}
+.header .logo {
+  cursor: pointer;
+  
+}
+
+.header .navbar a {
+  margin-left: 2rem;
+  font-size: 1.7rem;
+  text-transform: uppercase;
+  color:white;
+}
+
+.header .navbar a:hover {
+  color: var(--Soft-Red);
+}
+
+.header .navbar .btn {
+  padding: 0.6rem 3rem;
+  background-color: var(--Soft-Red);
+  color: #fff;
+  border-radius: 5rem;
+}
+
+.header .navbar .btn:hover {
+  color: var(--Soft-Red);
+  background-color: transparent;
+  border: 2px solid var(--Soft-Red);
+
+}
+
+#menu-btn {
+  padding: 1rem 1rem;
+  background-color: #eee;
+  font-size: 3rem;
+  color: var(--Soft-Blue);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* Media Queries */
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+
+  .header {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+
+  .header .navbar {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    box-shadow: var(--box-shadow);
+    width: 33rem;
+    border-radius: 2rem;
+    border: 2px solid var(--Soft-Blue);
+    background-color: #fff;
+    transform: scale(0);
+    transform-origin: top right;
+  }
+
+  .header .navbar.active {
+    transform: scale(1);
+  }
+
+  .header .navbar a {
+    margin: 2.5rem;
+    text-align: center;
+    display: block;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+/* navbar sections ends */
+
+/* home section starts  */
+
+.home {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* Make the section full height of the viewport */
+}
+
+.home .content {
+  text-align: center;
+  z-index: 1;
+  /* Place the content above the image */
+  color: #fff;
+  /* Change the text color as needed */
+}
+
+.home h1 {
+  font-size: 6em;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.home p {
+  font-size: 2em;
+  font-family: "Dancing Script", cursive;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+/* Keyframes for the blink animation */
+/* @keyframes blink {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+} */
+
+.home-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  font-weight: bold;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  animation: blink 1.8s infinite;
+}
+
+.home-btn:hover {
+  background-color: #00012e;
+  /* Change the hover background color as needed */
+  transform: translateY(-4px);
+  /* subtle lift */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.06);
+  /* Adds a darker box shadow on hover */
+}
+
+/* Style for the image within the home section */
+.home img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* use cover for better modern feel but unchanged size */
+  z-index: 0;
+  border: 2px rgb(226, 6, 6) solid;
+    box-shadow: rgb(236, 9, 9) 0px 5px 15px;
+    border-radius: 0.5rem;
+  /* Place the image behind the content */
+}
+
+/* Media Queries Home */
+
+/* Media query for min-width: 1025px and max-width: 1280px */
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .home h1 {
+    font-size: 5em;
+  }
+
+  .home p {
+    font-size: 2em;
+    margin-bottom: 25px;
+  }
+
+  .home-btn {
+    padding: 15px 30px;
+    font-size: 1.5em;
+  }
+
+  .home img {
+    object-fit: cover;
+  }
+
+  .features .row .image img {
+    width: 100%;
+  }
+
+  .rounded-corner-image {
+    border-radius: 10px;
+    /* Adjust the level of curvature for this screen size range */
+  }
+
+  .about .box img {
+    border-radius: 8px;
+    /* Adjust border-radius for about section images */
+  }
+
+  .footer .box img {
+    border-radius: 8px;
+    /* Adjust border-radius for footer section images */
+  }
+}
+
+/* Media query for min-width: 768px and max-width: 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .home h1 {
+    font-size: 4em;
+  }
+
+  .home p {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+  }
+
+  .home-btn {
+    padding: 12px 25px;
+    font-size: 1.4em;
+  }
+
+  .home img {
+    object-fit: cover;
+  }
+
+  .features .row .image img {
+    width: 100%;
+  }
+
+  .rounded-corner-image {
+    border-radius: 8px;
+    /* Adjust the level of curvature for this screen size range */
+  }
+
+  .about .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for about section images */
+  }
+
+  .footer .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for footer section images */
+  }
+}
+
+/* Media query for min-width: 768px, max-width: 1024px, and landscape orientation */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .home h1 {
+    font-size: 3.5em;
+  }
+
+  .home p {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .home-btn {
+    padding: 12px 25px;
+    font-size: 1.3em;
+  }
+
+  .home img {
+    object-fit: cover;
+  }
+
+  .features .row .image img {
+    width: 100%;
+  }
+
+  .rounded-corner-image {
+    border-radius: 8px;
+    /* Adjust the level of curvature for this screen size range and orientation */
+  }
+
+  .about .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for about section images */
+  }
+
+  .footer .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for footer section images */
+  }
+}
+
+/* Media query for min-width: 481px and max-width: 767px */
+@media (min-width: 481px) and (max-width: 767px) {
+  .home h1 {
+    font-size: 3.5em;
+  }
+
+  .home p {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+  }
+
+  .home-btn {
+    padding: 12px 25px;
+    font-size: 1.3em;
+  }
+
+  .home img {
+    object-fit: cover;
+  }
+
+  .features .row .image img {
+    width: 100%;
+  }
+
+  .rounded-corner-image {
+    border-radius: 8px;
+    /* Adjust the level of curvature for this screen size range */
+  }
+
+  .about .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for about section images */
+  }
+
+  .footer .box img {
+    border-radius: 6px;
+    /* Adjust border-radius for footer section images */
+  }
+}
+
+/* Media query for min-width: 320px and max-width: 480px */
+@media (min-width: 320px) and (max-width: 480px) {
+  .home h1 {
+    font-size: 3em;
+  }
+
+  .home p {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+  }
+
+  .home-btn {
+    padding: 10px 20px;
+    font-size: 1.2em;
+  }
+
+  .home img {
+    object-fit: cover;
+  }
+
+  .features .row .image img {
+    width: 100%;
+  }
+
+  .rounded-corner-image {
+    border-radius: 6px;
+    /* Adjust the level of curvature for this screen size range */
+  }
+
+  .about .box img {
+    border-radius: 4px;
+    /* Adjust border-radius for about section images */
+  }
+
+  .footer .box img {
+    border-radius: 4px;
+    /* Adjust border-radius for footer section images */
+  }
+}
+
+/* Media Queries ends */
+
+/* home section ends */
+
+/* features section starts  */
+
+.features .heading {
+  text-align: center;
+  padding: 1rem 0;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  border-bottom: 0.1rem solid rgb(0, 0, 0);
+  font-size: 3rem;
+  color: var(--Very-Dark-Blue);
+}
+
+
+.features .row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+  margin: 3rem 0;
+}
+
+.features .row .image {
+  flex: 1 1 45rem;
+  transform: none;
+  /* preserve original size */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 16px rgba(66, 213, 233, 0.08);
+}
+
+.features .row .image img {
+  width: 90%;
+  border-radius: 12px;
+}
+
+.rounded-corner-image {
+  border-radius: 10px;
+  /* Adjust the value to change the level of curvature */
+  overflow: hidden;
+  /* Ensures the corners are actually rounded */
+}
+
+.features .heading p {
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+.features .row .content {
+  flex: 1 1 45rem;
+}
+
+.features .row .content h1 {
+  font-size: 4rem;
+  padding: 1rem 0;
+  color: var(--Very-Dark-Blue);
+}
+
+.features .row .content p {
+  text-align: justify;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  color: var(--Grayish-Blue);
+  padding-bottom: 4rem;
+}
+
+/*Button-0 container start*/
+.button-container0 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.buttonn {
+  padding: 10px 20px;
+  margin: 10px;
+  border: 2px solid #00a859;
+  border-radius: 50px;
+  background-color: #f2f2f2;
+  color: #333;
+  text-decoration: none;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.06);
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.25s ease;
+  font-family: "Arial", sans-serif;
+  font-size: 15.5px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  width: 300px;
+}
+
+.buttonn:hover {
+ 
+  color: white;
+  background-color: #4234ff;
+  /* Change the hover background color as needed */
+  transform: translateY(-4px);
+  /* subtle lift */
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(32, 92, 255, 0.12);
+  /* Adds a darker box shadow on hover */
+}
+
+.active {
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .button-container0 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .buttonn {
+    padding: 10px 20px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .button-container0 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .buttonn {
+    padding: 10px 20px;
+  }
+}
+
+/*Button-0 container end*/
+
+/* features section ends */
+
+/* about section starts  */
+
+.about .box-container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  /* Fixed to 6 columns */
+  /* grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr)); */
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .about .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .about .box-container {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  }
+}
+
+.about .box {
+  border: 2px rgb(98, 255, 255) solid;
+  box-shadow: rgb(9, 236, 199) 0px 5px 15px;
+  border-radius: 0.5rem;
+  text-align: center;
+  padding: 2.5rem;
+  background-color: #2457b4;
+}
+
+.about .box:hover {
+  border: 2px rgb(115, 101, 236) solid;
+  box-shadow: none;
+}
+
+.about .box h3 {
+  font-size: 2rem;
+  padding: 0.2rem 0;
+  color: rgb(5, 0, 77);
+}
+
+.about .box p {
+  font-size: 1.7rem;
+  padding-bottom: 2.5rem;
+  color: rgb(255, 255, 255);
+}
+
+/* Style for the member image */
+.box img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  /* Adds a slight border-radius to the image */
+  box-shadow: 0 4px 8px rgba(39, 53, 252, 0.06);
+  /* Adds a subtle box shadow */
+  object-fit: cover;
+}
+
+.box img:hover {
+  transform: none;
+  /* NO scale on image hover to respect request */
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 12px 30px rgba(31, 0, 206, 0.08);
+  /* Subtle lighting change only */
+}
+
+/* styles for member details and button */
+.box h3,
+.box p {
+  margin: 10px 0;
+}
+
+.all-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  background-color: #3498db;
+  color: #fff;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.25s ease;
+}
+
+.all-btn:hover {
+ transform: translateY(-6px);
+ color: #64FFDA;
+  /* Change the hover background color */
+}
+
+/* Style for the social media icons */
+.box a {
+  display: inline-block;
+  margin: 5px;
+}
+
+/* Style for Instagram icon */
+.box a i.fa-instagram {
+  font-size: 24px;
+  color: #e64040;
+}
+
+/* Style for Instagram icon on hover */
+.box a i.fa-instagram:hover {
+  background-color: #ff2b2b;
+  border-radius: 50%;
+  padding: 5px;
+  color: var(--Soft-Blue);
+  border: 2px solid var(--Soft-Blue);
+  color: rgb(255, 255, 255);
+}
+
+/* Style for LinkedIn icon */
+.box a i.fa-linkedin {
+  font-size: 24px;
+  color: #4cc0ff;
+}
+
+/* Style for LinkedIn icon on hover */
+.box a i.fa-linkedin:hover {
+  background-color: #0077b5;
+  border-radius: 50%;
+  padding: 5px;
+  color: var(--Soft-Blue);
+  border: 2px solid var(--Soft-Blue);
+  color: rgb(255, 255, 255);
+}
+
+/* Style for GitHub icon */
+.box a i.fa-github {
+  font-size: 24px;
+  color: #000000;
+}
+
+/* Style for GitHub icon on hover */
+.box a i.fa-github:hover {
+  background-color: #333;
+  border-radius: 50%;
+  padding: 5px;
+  color: var(--Soft-Blue);
+  border: 2px solid var(--Soft-Blue);
+  color: rgb(255, 255, 255);
+}
+
+/* styles for member image ends */
+
+/* about section ends */
+
+/* footer section starts */
+
+.footer {
+  background-color: #010216f5;
+}
+
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+  gap: 2rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.footer .box-container .box h3 {
+  font-size: 2.5rem;
+  color: var(--black);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--light-color);
+  padding: 1rem 0;
+}
+
+.footer .box-container .box a i {
+  padding-right: 0.5rem;
+  color: var(--green);
+}
+
+.footer .box-container .box a:hover i {
+  padding-right: 1rem;
+}
+
+.footer .credit {
+  padding: 1rem;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+  color: #67f5ff;
+  border-top: 0.1rem solid rgb(56, 225, 255);
+}
+
+.footer .credit span {
+  color: var(--Soft-Red);
+  cursor: pointer;
+}
+
+/* footer section ends */

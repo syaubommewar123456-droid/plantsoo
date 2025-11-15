@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Future Scope | Team Plantso</title>
+  <link rel="stylesheet" href="footer.css">
+  <style>
+    /* General reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #121212; /* Dark background */
+      color: #f0f8ff;
+      overflow-x: hidden;
+      padding: 0;
+    }
+
+    header {
+      background: #4CAF50; /* Vibrant header background */
+      color: #f0f8ff;
+      text-align: center;
+      padding: 40px 20px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      animation: fadeIn 2s ease-out;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    main {
+      padding: 60px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 40px;
+      animation: slideIn 1s ease-in-out;
+    }
+
+    /* Section layout - card style */
+    .future-scope-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .future-scope-card {
+      background-color: #1c1c1c;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .future-scope-card:hover {
+      transform: translateY(-10px); /* Hover effect */
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    .future-scope-card h2 {
+      font-size: 1.8rem;
+      color: #4CAF50;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .future-scope-card p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+    }
+
+    .future-scope-card ul {
+      list-style-type: none;
+      color: #cfcfcf;
+      padding-left: 0;
+    }
+
+    .future-scope-card ul li {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .future-scope-card ul li::before {
+      content: "✔";
+      color: #4CAF50;
+      margin-right: 10px;
+    }
+
+    footer {
+      background-color: #4CAF50; /* Vibrant footer */
+      color: #f0f8ff;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      bottom: 0;
+      width: 100%;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    footer p {
+      font-size: 1rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      main {
+        padding: 40px 20px;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .future-scope-card {
+        padding: 20px;
+      }
+
+      .future-scope-card h2 {
+        font-size: 1.6rem;
+      }
+
+      .future-scope-card p, .future-scope-card ul li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Future Scope of Team Plantso</h1>
+  </header>
+
+  <main>
+    <section>
+      <h2>What’s Next</h2>
+      <p>We are continuously evolving to bring you the best in plant disease detection and management. Here’s a glimpse of what’s coming:</p>
+
+      <div class="future-scope-container">
+        <div class="future-scope-card">
+          <h2>Crop Health Forecasting</h2>
+          <p>Predict the health of crops with advanced data models and real-time insights.</p>
+          <ul>
+            <li>AI-driven predictions</li>
+            <li>Weather and soil data integration</li>
+            <li>Visual crop health mapping</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Pest Risk Maps</h2>
+          <p>Detailed maps showing the risk of pests by region, helping farmers prevent infestations.</p>
+          <ul>
+            <li>Real-time pest tracking</li>
+            <li>Geospatial analysis</li>
+            <li>Predictive models</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Integration with Farm Management Systems</h2>
+          <p>Seamless integration with existing farm management tools for easier workflow and decision making.</p>
+          <ul>
+            <li>API-based integration</li>
+            <li>Data synchronization</li>
+            <li>Automated reporting</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Real-Time Disease Alerts</h2>
+          <p>Stay updated with immediate notifications about crop diseases and treatment suggestions.</p>
+          <ul>
+            <li>Instant notifications</li>
+            <li>Personalized crop care tips</li>
+            <li>Alerts via mobile app</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Remote Agronomist Consultations</h2>
+          <p>Access professional advice and support for your farm remotely via video or chat consultations.</p>
+          <ul>
+            <li>Expert consultations</li>
+            <li>Live chat support</li>
+            <li>On-demand service</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Offline Mobile Tools</h2>
+          <p>Access crucial tools and data even without an internet connection, for those in remote areas.</p>
+          <ul>
+            <li>Offline map and data access</li>
+            <li>Cloud synchronization</li>
+            <li>Downloadable content</li>
+          </ul>
+        </div>
+
+        <div class="future-scope-card">
+          <h2>Support for More Crops</h2>
+          <p>Expanding our platform to include a wider range of crops for diverse agricultural needs.</p>
+          <ul>
+            <li>Expansion of crop library</li>
+            <li>Tailored solutions for new crops</li>
+            <li>Comprehensive crop care guides</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Team Plantso | All rights reserved.</p>
+  </footer>
+
+  
+</body>
+</html>
